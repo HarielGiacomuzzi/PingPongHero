@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B57699E31B5D71D400DDFD43 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E21B5D71D400DDFD43 /* PlayerController.swift */; };
+		B57699E51B5D71E400DDFD43 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E41B5D71E400DDFD43 /* GameController.swift */; };
+		B57699E91B5D726400DDFD43 /* CustomCellPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E81B5D726400DDFD43 /* CustomCellPlayer.swift */; };
 		DBD8EAE41B5D623F00B5D780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8EAE31B5D623F00B5D780 /* AppDelegate.swift */; };
 		DBD8EAE71B5D623F00B5D780 /* PingPongHero.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBD8EAE51B5D623F00B5D780 /* PingPongHero.xcdatamodeld */; };
-		DBD8EAE91B5D623F00B5D780 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8EAE81B5D623F00B5D780 /* ViewController.swift */; };
+		DBD8EAE91B5D623F00B5D780 /* InitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8EAE81B5D623F00B5D780 /* InitialController.swift */; };
 		DBD8EAEC1B5D623F00B5D780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD8EAEA1B5D623F00B5D780 /* Main.storyboard */; };
 		DBD8EAEE1B5D623F00B5D780 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD8EAED1B5D623F00B5D780 /* Images.xcassets */; };
 		DBD8EAF11B5D623F00B5D780 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBD8EAEF1B5D623F00B5D780 /* LaunchScreen.xib */; };
@@ -27,11 +30,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B57699E21B5D71D400DDFD43 /* PlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerController.swift; path = ViewController/PlayerController.swift; sourceTree = "<group>"; };
+		B57699E41B5D71E400DDFD43 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		B57699E81B5D726400DDFD43 /* CustomCellPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellPlayer.swift; sourceTree = "<group>"; };
 		DBD8EADE1B5D623F00B5D780 /* PingPongHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PingPongHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD8EAE21B5D623F00B5D780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD8EAE31B5D623F00B5D780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBD8EAE61B5D623F00B5D780 /* PingPongHero.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PingPongHero.xcdatamodel; sourceTree = "<group>"; };
-		DBD8EAE81B5D623F00B5D780 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBD8EAE81B5D623F00B5D780 /* InitialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialController.swift; sourceTree = "<group>"; };
 		DBD8EAEB1B5D623F00B5D780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBD8EAED1B5D623F00B5D780 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DBD8EAF01B5D623F00B5D780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -58,6 +64,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B57699E11B5D719500DDFD43 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DBD8EAE81B5D623F00B5D780 /* InitialController.swift */,
+				B57699E21B5D71D400DDFD43 /* PlayerController.swift */,
+				B57699E41B5D71E400DDFD43 /* GameController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		B57699E61B5D723400DDFD43 /* Project Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBD8EAE31B5D623F00B5D780 /* AppDelegate.swift */,
+				DBD8EAEA1B5D623F00B5D780 /* Main.storyboard */,
+				DBD8EAED1B5D623F00B5D780 /* Images.xcassets */,
+				DBD8EAEF1B5D623F00B5D780 /* LaunchScreen.xib */,
+				DBD8EAE51B5D623F00B5D780 /* PingPongHero.xcdatamodeld */,
+			);
+			name = "Project Files";
+			sourceTree = "<group>";
+		};
+		B57699E71B5D724F00DDFD43 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B57699E81B5D726400DDFD43 /* CustomCellPlayer.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		DBD8EAD51B5D623F00B5D780 = {
 			isa = PBXGroup;
 			children = (
@@ -79,12 +115,9 @@
 		DBD8EAE01B5D623F00B5D780 /* PingPongHero */ = {
 			isa = PBXGroup;
 			children = (
-				DBD8EAE31B5D623F00B5D780 /* AppDelegate.swift */,
-				DBD8EAE81B5D623F00B5D780 /* ViewController.swift */,
-				DBD8EAEA1B5D623F00B5D780 /* Main.storyboard */,
-				DBD8EAED1B5D623F00B5D780 /* Images.xcassets */,
-				DBD8EAEF1B5D623F00B5D780 /* LaunchScreen.xib */,
-				DBD8EAE51B5D623F00B5D780 /* PingPongHero.xcdatamodeld */,
+				B57699E71B5D724F00DDFD43 /* Utilities */,
+				B57699E61B5D723400DDFD43 /* Project Files */,
+				B57699E11B5D719500DDFD43 /* ViewController */,
 				DBD8EAE11B5D623F00B5D780 /* Supporting Files */,
 			);
 			path = PingPongHero;
@@ -215,9 +248,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD8EAE91B5D623F00B5D780 /* ViewController.swift in Sources */,
+				DBD8EAE91B5D623F00B5D780 /* InitialController.swift in Sources */,
+				B57699E51B5D71E400DDFD43 /* GameController.swift in Sources */,
 				DBD8EAE41B5D623F00B5D780 /* AppDelegate.swift in Sources */,
+				B57699E31B5D71D400DDFD43 /* PlayerController.swift in Sources */,
 				DBD8EAE71B5D623F00B5D780 /* PingPongHero.xcdatamodeld in Sources */,
+				B57699E91B5D726400DDFD43 /* CustomCellPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +451,7 @@
 				DBD8EB021B5D623F00B5D780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBD8EB031B5D623F00B5D780 /* Build configuration list for PBXNativeTarget "PingPongHeroTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +460,7 @@
 				DBD8EB051B5D623F00B5D780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
