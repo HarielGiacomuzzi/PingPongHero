@@ -8,9 +8,10 @@
 
 import UIKit
 
-class PlayerController: UIViewController {
+class RoomSelectController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var playerArray = [String]()
     
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class PlayerController: UIViewController {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomCellPlayer
+        var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomCellRoom
         
         return cell
     }

@@ -7,9 +7,9 @@
 //
 import UIKit
 
-class CustomCellPlayer: UITableViewCell {
+class CustomCellRoom: UITableViewCell {
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var roomName: UILabel!
+    @IBOutlet weak var enterButton: UIButton!
     
 }
