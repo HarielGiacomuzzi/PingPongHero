@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B57699E31B5D71D400DDFD43 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E21B5D71D400DDFD43 /* PlayerController.swift */; };
+		B57699E31B5D71D400DDFD43 /* RoomSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E21B5D71D400DDFD43 /* RoomSelectController.swift */; };
 		B57699E51B5D71E400DDFD43 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E41B5D71E400DDFD43 /* GameController.swift */; };
-		B57699E91B5D726400DDFD43 /* CustomCellPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E81B5D726400DDFD43 /* CustomCellPlayer.swift */; };
+		B57699E91B5D726400DDFD43 /* CustomCellRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E81B5D726400DDFD43 /* CustomCellRoom.swift */; };
 		B57699EB1B5D872700DDFD43 /* Will-Ferrell-se-prend-pour-Forrest-Gump-et-se-met-au-ping-pong_portrait_w858-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B57699EA1B5D872700DDFD43 /* Will-Ferrell-se-prend-pour-Forrest-Gump-et-se-met-au-ping-pong_portrait_w858-2.png */; };
 		B57699EE1B5D885F00DDFD43 /* EndGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699ED1B5D885F00DDFD43 /* EndGameController.swift */; };
 		DB10AD4F1B601ED800DCFF28 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB10AD4E1B601ED800DCFF28 /* ConnectionManager.swift */; };
@@ -33,9 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B57699E21B5D71D400DDFD43 /* PlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerController.swift; path = ViewController/PlayerController.swift; sourceTree = "<group>"; };
+		B57699E21B5D71D400DDFD43 /* RoomSelectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomSelectController.swift; path = ViewController/RoomSelectController.swift; sourceTree = "<group>"; };
 		B57699E41B5D71E400DDFD43 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
-		B57699E81B5D726400DDFD43 /* CustomCellPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellPlayer.swift; sourceTree = "<group>"; };
+		B57699E81B5D726400DDFD43 /* CustomCellRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellRoom.swift; sourceTree = "<group>"; };
 		B57699EA1B5D872700DDFD43 /* Will-Ferrell-se-prend-pour-Forrest-Gump-et-se-met-au-ping-pong_portrait_w858-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Will-Ferrell-se-prend-pour-Forrest-Gump-et-se-met-au-ping-pong_portrait_w858-2.png"; path = "../Will-Ferrell-se-prend-pour-Forrest-Gump-et-se-met-au-ping-pong_portrait_w858-2.png"; sourceTree = "<group>"; };
 		B57699ED1B5D885F00DDFD43 /* EndGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndGameController.swift; path = ViewController/EndGameController.swift; sourceTree = "<group>"; };
 		DB10AD4E1B601ED800DCFF28 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
@@ -74,9 +74,11 @@
 			isa = PBXGroup;
 			children = (
 				DBD8EAE81B5D623F00B5D780 /* InitialController.swift */,
-				B57699E21B5D71D400DDFD43 /* PlayerController.swift */,
+				B57699E21B5D71D400DDFD43 /* RoomSelectController.swift */,
 				B57699E41B5D71E400DDFD43 /* GameController.swift */,
 				B57699ED1B5D885F00DDFD43 /* EndGameController.swift */,
+				B57699EF1B5EBEC200DDFD43 /* CreateRoomController.swift */,
+				B57699F31B5EC92D00DDFD43 /* RoomController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -268,12 +270,14 @@
 			files = (
 				DBD8EAE91B5D623F00B5D780 /* InitialController.swift in Sources */,
 				B57699E51B5D71E400DDFD43 /* GameController.swift in Sources */,
+				B57699F41B5EC92D00DDFD43 /* RoomController.swift in Sources */,
+				B57699F01B5EBEC200DDFD43 /* CreateRoomController.swift in Sources */,
 				B57699EE1B5D885F00DDFD43 /* EndGameController.swift in Sources */,
 				DBD8EAE41B5D623F00B5D780 /* AppDelegate.swift in Sources */,
 				B57699E31B5D71D400DDFD43 /* PlayerController.swift in Sources */,
 				DB10AD4F1B601ED800DCFF28 /* ConnectionManager.swift in Sources */,
 				DBD8EAE71B5D623F00B5D780 /* PingPongHero.xcdatamodeld in Sources */,
-				B57699E91B5D726400DDFD43 /* CustomCellPlayer.swift in Sources */,
+				B57699E91B5D726400DDFD43 /* CustomCellRoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
