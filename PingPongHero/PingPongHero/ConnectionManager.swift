@@ -14,11 +14,7 @@ class ConnectionManager: NSObject, MCSessionDelegate{
     var session: MCSession = MCSession();
     var browser: MCBrowserViewController = MCBrowserViewController();
     var advertiser: MCAdvertiserAssistant = MCAdvertiserAssistant();
-    let connectionManager : ConnectionManager = ConnectionManager();
-    
-    func getConnectionManagerInstance() -> ConnectionManager{
-        return self.connectionManager;
-    }
+    static let sharedInstance = ConnectionManager();
     
     func setupPeerWithDisplayName (displayName:String){
         peerID = MCPeerID(displayName: displayName)
