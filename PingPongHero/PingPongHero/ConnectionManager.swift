@@ -16,6 +16,8 @@ class ConnectionManager: NSObject, MCSessionDelegate{
     var advertiser: MCAdvertiserAssistant = MCAdvertiserAssistant();
     static let sharedInstance = ConnectionManager();
     
+    func setupConnectionWithOptions(displayName : String, active : Bool){}
+    
     func setupPeerWithDisplayName (displayName:String){
         peerID = MCPeerID(displayName: displayName)
     }
