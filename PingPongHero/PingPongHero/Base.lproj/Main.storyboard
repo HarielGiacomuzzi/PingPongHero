@@ -145,7 +145,7 @@
         <!--RoomSelectController-->
         <scene sceneID="apx-Qd-1Am">
             <objects>
-                <viewController title="RoomSelectController" id="X1f-l3-e91" customClass="RoomController" sceneMemberID="viewController">
+                <viewController title="RoomSelectController" id="X1f-l3-e91" customClass="RoomSelectController" customModule="PingPongHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fqu-Yk-bNg"/>
                         <viewControllerLayoutGuide type="bottom" id="I0F-2K-SUb"/>
@@ -188,8 +188,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="X1f-l3-e91" id="pkV-p7-fGM"/>
-                                    <outlet property="delegate" destination="X1f-l3-e91" id="Tjg-2i-qH6"/>
+                                    <outlet property="dataSource" destination="X1f-l3-e91" id="8HM-wa-DVf"/>
+                                    <outlet property="delegate" destination="X1f-l3-e91" id="1do-h9-5kH"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -202,7 +202,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="mNy-qH-Xro" id="Hkr-h3-R8n"/>
+                        <outlet property="tableView" destination="mNy-qH-Xro" id="dFW-Mn-4Nw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqK-p3-Ron" userLabel="First Responder" sceneMemberID="firstResponder"/>
