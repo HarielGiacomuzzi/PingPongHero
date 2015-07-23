@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
-class InitialController: UIViewController {
+class InitialController: UIViewController, MCBrowserViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,5 +21,22 @@ class InitialController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func startConnection(sender: AnyObject) {
+        ConnectionManager.sharedInstance.setupConnectionWithOptions(UIDevice.currentDevice().name, active: true);
+        ConnectionManager.sharedInstance.setupBrowser();
+        ConnectionManager.sharedInstance.browser?.delegate = self;
+        self.presentViewController(ConnectionManager.sharedInstance.browser!, animated: true) { () -> Void in}
+        
+    }
+    
+    // Notifies the delegate, when the user taps the done button
+    func browserViewControllerDidFinish(browserViewController: MCBrowserViewController!){
+        ConnectionManager.sharedInstance.browser?.dismissViewControllerAnimated(true, completion: { () -> Void in})
+    }
+    
+    // Notifies delegate that the user taps the cancel button.
+    func browserViewControllerWasCancelled(browserViewController: MCBrowserViewController!){
+        ConnectionManager.sharedInstance.browser?.dismissViewControllerAnimated(true, completion: { () -> Void in})
+    }
 
 }

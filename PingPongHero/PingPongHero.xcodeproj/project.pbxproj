@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B57699E31B5D71D400DDFD43 /* RoomSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E21B5D71D400DDFD43 /* RoomSelectController.swift */; };
 		B57699E51B5D71E400DDFD43 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E41B5D71E400DDFD43 /* GameController.swift */; };
 		B57699E91B5D726400DDFD43 /* CustomCellRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57699E81B5D726400DDFD43 /* CustomCellRoom.swift */; };
 		B57699EB1B5D872700DDFD43 /* Will-Ferrell-se-prend-pour-Forrest-Gump-et-se-met-au-ping-pong_portrait_w858-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B57699EA1B5D872700DDFD43 /* Will-Ferrell-se-prend-pour-Forrest-Gump-et-se-met-au-ping-pong_portrait_w858-2.png */; };
@@ -105,9 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				B57699EC1B5D873300DDFD43 /* assets */,
-				B57699E81B5D726400DDFD43 /* CustomCellRoom.swift */,
 				B57699F11B5EC14800DDFD43 /* CustomCellGameMode.swift */,
-				B57699E81B5D726400DDFD43 /* CustomCellPlayer.swift */,
+				B57699E81B5D726400DDFD43 /* CustomCellRoom.swift */,
 				DB10AD4E1B601ED800DCFF28 /* ConnectionManager.swift */,
 			);
 			name = Utilities;
@@ -224,6 +222,7 @@
 				TargetAttributes = {
 					DBD8EADD1B5D623F00B5D780 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = DVXNNDG4U4;
 					};
 					DBD8EAF51B5D623F00B5D780 = {
 						CreatedOnToolsVersion = 6.4;
@@ -283,8 +282,6 @@
 				B57699EE1B5D885F00DDFD43 /* EndGameController.swift in Sources */,
 				DBD8EAE41B5D623F00B5D780 /* AppDelegate.swift in Sources */,
 				B57699F21B5EC14800DDFD43 /* CustomCellGameMode.swift in Sources */,
-				B57699E31B5D71D400DDFD43 /* RoomSelectController.swift in Sources */,
-				B57699E31B5D71D400DDFD43 /* PlayerController.swift in Sources */,
 				DB10AD4F1B601ED800DCFF28 /* ConnectionManager.swift in Sources */,
 				DBD8EAE71B5D623F00B5D780 /* PingPongHero.xcdatamodeld in Sources */,
 				B57699E91B5D726400DDFD43 /* CustomCellRoom.swift in Sources */,
@@ -416,9 +413,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PingPongHero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -426,9 +426,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PingPongHero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
