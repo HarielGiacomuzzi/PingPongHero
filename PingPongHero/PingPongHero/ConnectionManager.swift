@@ -9,15 +9,19 @@
 import Foundation
 import MultipeerConnectivity
 
+
+
 class ConnectionManager: NSObject, MCSessionDelegate{
     var peerID: MCPeerID = MCPeerID();
     var session: MCSession = MCSession();
-    var browser: MCBrowserViewController = MCBrowserViewController();
+    var browser: MCBrowserViewController?;
     var advertiser: MCAdvertiserAssistant = MCAdvertiserAssistant();
-    let connectionManager : ConnectionManager = ConnectionManager();
+    static let sharedInstance = ConnectionManager();
     
-    func getConnectionManagerInstance() -> ConnectionManager{
-        return self.connectionManager;
+    func setupConnectionWithOptions(displayName : String, active : Bool){
+        setupPeerWithDisplayName(displayName);
+        setupSession();
+        advertiseSelf(active);
     }
     
     func setupPeerWithDisplayName (displayName:String){
@@ -30,12 +34,12 @@ class ConnectionManager: NSObject, MCSessionDelegate{
     }
     
     func setupBrowser(){
-        browser = MCBrowserViewController(serviceType: "ping_pong_hero", session: session)
+        browser = MCBrowserViewController(serviceType: "pingponghero", session: session)
     }
     
     func advertiseSelf(advertise:Bool){
         if advertise{
-            advertiser = MCAdvertiserAssistant(serviceType: "ping_pong_hero", discoveryInfo: nil, session: session)
+            advertiser = MCAdvertiserAssistant(serviceType: "pingponghero", discoveryInfo: nil, session: session)
             advertiser.start()
         }else{
             advertiser.stop()
