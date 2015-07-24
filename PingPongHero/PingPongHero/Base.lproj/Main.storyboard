@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XTH-in-E7o">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -75,6 +76,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="163" y="12" width="42" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -242,6 +246,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="raquete" translatesAutoresizingMaskIntoConstraints="NO" id="lCv-t4-2Tl">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="raquete" translatesAutoresizingMaskIntoConstraints="NO" id="etB-Je-lgf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -250,13 +257,17 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
                             </constraint>
                             <constraint firstItem="lCv-t4-2Tl" firstAttribute="leading" secondItem="c3S-HH-ZKu" secondAttribute="leading" id="1vE-yb-qV0"/>
+                            <constraint firstItem="etB-Je-lgf" firstAttribute="leading" secondItem="c3S-HH-ZKu" secondAttribute="leading" id="3Uh-qU-SVq"/>
+                            <constraint firstAttribute="bottom" secondItem="etB-Je-lgf" secondAttribute="bottom" id="8lA-wR-HZD"/>
                             <constraint firstItem="vvb-Am-wOe" firstAttribute="top" secondItem="lCv-t4-2Tl" secondAttribute="bottom" id="DCp-L5-w9w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lCv-t4-2Tl" secondAttribute="trailing" id="Kkr-R5-Jhn">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
                             </constraint>
+                            <constraint firstAttribute="trailing" secondItem="etB-Je-lgf" secondAttribute="trailing" id="MBJ-Ls-asV"/>
                             <constraint firstItem="lCv-t4-2Tl" firstAttribute="top" secondItem="c3S-HH-ZKu" secondAttribute="top" id="QcW-fm-6cI"/>
                             <constraint firstItem="lCv-t4-2Tl" firstAttribute="top" secondItem="c3S-HH-ZKu" secondAttribute="topMargin" id="VlQ-pR-lwB"/>
                             <constraint firstAttribute="trailing" secondItem="lCv-t4-2Tl" secondAttribute="trailing" id="XcB-Mk-Ec2"/>
+                            <constraint firstItem="etB-Je-lgf" firstAttribute="top" secondItem="ZwR-AY-aod" secondAttribute="bottom" constant="-20" id="zK7-mU-Vfy"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -295,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gh5-LF-KIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117.5" y="1146"/>
+            <point key="canvasLocation" x="1117" y="1146"/>
         </scene>
     </scenes>
     <resources>
