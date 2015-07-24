@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XTH-in-E7o">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -75,6 +76,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="163" y="12" width="42" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -158,7 +162,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gcN-j2-LcF" customClass="CustomCellPlayer" customModule="PingPongHero" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gcN-j2-LcF" customClass="CustomCellPlayer" customModule="PingPongHero" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gcN-j2-LcF" id="e1Q-aM-aFY">
@@ -225,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ty-uR-laC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="1173"/>
+            <point key="canvasLocation" x="279" y="1173"/>
         </scene>
         <!--GameController-->
         <scene sceneID="jp8-ZX-tp1">
@@ -238,7 +242,63 @@
                     <view key="view" contentMode="scaleToFill" id="c3S-HH-ZKu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="raquete" translatesAutoresizingMaskIntoConstraints="NO" id="lCv-t4-2Tl">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="raquete" translatesAutoresizingMaskIntoConstraints="NO" id="etB-Je-lgf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vvb-Am-wOe" firstAttribute="top" secondItem="lCv-t4-2Tl" secondAttribute="bottom" id="0IC-OB-e1F"/>
+                            <constraint firstItem="lCv-t4-2Tl" firstAttribute="leading" secondItem="c3S-HH-ZKu" secondAttribute="leadingMargin" id="1hZ-m0-fxL">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
+                            </constraint>
+                            <constraint firstItem="lCv-t4-2Tl" firstAttribute="leading" secondItem="c3S-HH-ZKu" secondAttribute="leading" id="1vE-yb-qV0"/>
+                            <constraint firstItem="etB-Je-lgf" firstAttribute="leading" secondItem="c3S-HH-ZKu" secondAttribute="leading" id="3Uh-qU-SVq"/>
+                            <constraint firstAttribute="bottom" secondItem="etB-Je-lgf" secondAttribute="bottom" id="8lA-wR-HZD"/>
+                            <constraint firstItem="vvb-Am-wOe" firstAttribute="top" secondItem="lCv-t4-2Tl" secondAttribute="bottom" id="DCp-L5-w9w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lCv-t4-2Tl" secondAttribute="trailing" id="Kkr-R5-Jhn">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="etB-Je-lgf" secondAttribute="trailing" id="MBJ-Ls-asV"/>
+                            <constraint firstItem="lCv-t4-2Tl" firstAttribute="top" secondItem="c3S-HH-ZKu" secondAttribute="top" id="QcW-fm-6cI"/>
+                            <constraint firstItem="lCv-t4-2Tl" firstAttribute="top" secondItem="c3S-HH-ZKu" secondAttribute="topMargin" id="VlQ-pR-lwB"/>
+                            <constraint firstAttribute="trailing" secondItem="lCv-t4-2Tl" secondAttribute="trailing" id="XcB-Mk-Ec2"/>
+                            <constraint firstItem="etB-Je-lgf" firstAttribute="top" secondItem="ZwR-AY-aod" secondAttribute="bottom" constant="-20" id="zK7-mU-Vfy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lCv-t4-2Tl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1hZ-m0-fxL"/>
+                                <exclude reference="1vE-yb-qV0"/>
+                                <exclude reference="Kkr-R5-Jhn"/>
+                                <exclude reference="QcW-fm-6cI"/>
+                                <exclude reference="VlQ-pR-lwB"/>
+                                <exclude reference="XcB-Mk-Ec2"/>
+                                <exclude reference="0IC-OB-e1F"/>
+                                <exclude reference="DCp-L5-w9w"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="lCv-t4-2Tl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1hZ-m0-fxL"/>
+                                <include reference="1vE-yb-qV0"/>
+                                <exclude reference="Kkr-R5-Jhn"/>
+                                <include reference="QcW-fm-6cI"/>
+                                <exclude reference="VlQ-pR-lwB"/>
+                                <include reference="XcB-Mk-Ec2"/>
+                                <include reference="0IC-OB-e1F"/>
+                                <exclude reference="DCp-L5-w9w"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <segue destination="goO-BT-f8A" kind="show" id="PlR-SV-zfK"/>
@@ -246,9 +306,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gh5-LF-KIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1070" y="1173"/>
+            <point key="canvasLocation" x="1117" y="1146"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="raquete" width="187" height="333"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bxp-0K-lDZ"/>
         <segue reference="ake-lG-Ckr"/>
