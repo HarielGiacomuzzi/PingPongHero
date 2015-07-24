@@ -16,59 +16,84 @@ class GameController: UIViewController {
     var timer2 = NSTimer()
     var queue = NSOperationQueue()
     lazy var motionManager = CMMotionManager()
-    var hit = false
+    var canHit = false
+    var playerTurn = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer1 = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("checkForHit"), userInfo: nil, repeats: false)
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+//        timer1 = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("ballDidHitTable"), userInfo: nil, repeats: false)
+        canHit = true
+        monitorUserMovements()
+       // playerDidHit()
     }
     
     
-    func checkForHit() {
-        timer2 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timeToHitFinished"), userInfo: nil, repeats: false)
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+    func monitorUserMovements() {
+        var forceArray:[Double] = []
+        var isHitting = false
+        var didHit = false
         motionManager.startDeviceMotionUpdatesToQueue(queue, withHandler:
             {data, error in
-                if (data.userAcceleration.z > 0.5 || data.userAcceleration.z < -0.5) && data.gravity.x < 0 {
-                    self.motionManager.stopDeviceMotionUpdates()
-                    println(data.userAcceleration.z)
-                    self.hit = true
+                if data.userAcceleration.z < -0.5 && data.gravity.x < 0 {
+                    isHitting = true
+                    forceArray.append(data.userAcceleration.z)
+                } else {
+                    if isHitting {
+                        isHitting = false
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.playerDidTryToHit(forceArray)
+                        }
+                        self.motionManager.stopDeviceMotionUpdates()
+
+                    }
+
                 }
                 
         })
-        
     }
     
-    func timeToHitFinished() {
-        if(!hit){
-            motionManager.stopDeviceMotionUpdates()
-        }else {
-            hit = false
-            didHitBall()
-            
-        }
-    }
-    
-    func didHitBall() {
-        if timer2.valid {
-            timer1.invalidate()
-            timer2.invalidate()
-            sendBall()
+    func ballDidHitTable() {
+        println("balldidhittable")
+        if playerTurn {
+            timer1 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("vibrate"), userInfo: nil, repeats: false)
         } else {
-            timer1.invalidate()
-            timer2.invalidate()
+            timer1 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("enemyPlayerResponded"), userInfo: nil, repeats: false)
         }
+        //play sound
+        //setup timer
+    }
+    
+    func vibrate() {
+        println("vibrate")
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        canHit = true
+    }
+    
+    func playerDidTryToHit(force:[Double]) {
+        println("playerdidtrytohit")
+        println(force)
+        playerDidHit()
+
+    }
+    
+    func playerDidHit() {
+        println("playerdidhit")
+        //setup timer for ball hitting table
+        timer1 = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("ballDidHitTable"), userInfo: nil, repeats: false)
+        playerTurn = false
+    }
+    
+    func playerDidMiss() {
         
     }
     
-    func sendBall() {
-        timer1 = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("checkForHit"), userInfo: nil, repeats: false)
+    func enemyPlayerResponded() {
+                println("enemyresponded")
+        timer1 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("ballDidHitTable"), userInfo: nil, repeats: false)
+        playerTurn = true
+        monitorUserMovements()
+        //if hit blablabla
+        //if miss blablabla
     }
     
 }
