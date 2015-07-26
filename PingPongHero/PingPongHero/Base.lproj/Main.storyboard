@@ -248,6 +248,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="raquete" translatesAutoresizingMaskIntoConstraints="NO" id="etB-Je-lgf">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -274,14 +275,14 @@
                                 <exclude reference="lCv-t4-2Tl"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="0IC-OB-e1F"/>
+                                <exclude reference="DCp-L5-w9w"/>
                                 <exclude reference="1hZ-m0-fxL"/>
                                 <exclude reference="1vE-yb-qV0"/>
                                 <exclude reference="Kkr-R5-Jhn"/>
                                 <exclude reference="QcW-fm-6cI"/>
                                 <exclude reference="VlQ-pR-lwB"/>
                                 <exclude reference="XcB-Mk-Ec2"/>
-                                <exclude reference="0IC-OB-e1F"/>
-                                <exclude reference="DCp-L5-w9w"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -289,14 +290,14 @@
                                 <include reference="lCv-t4-2Tl"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="0IC-OB-e1F"/>
+                                <exclude reference="DCp-L5-w9w"/>
                                 <exclude reference="1hZ-m0-fxL"/>
                                 <include reference="1vE-yb-qV0"/>
                                 <exclude reference="Kkr-R5-Jhn"/>
                                 <include reference="QcW-fm-6cI"/>
                                 <exclude reference="VlQ-pR-lwB"/>
                                 <include reference="XcB-Mk-Ec2"/>
-                                <include reference="0IC-OB-e1F"/>
-                                <exclude reference="DCp-L5-w9w"/>
                             </mask>
                         </variation>
                     </view>

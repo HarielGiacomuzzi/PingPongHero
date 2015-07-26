@@ -8,10 +8,13 @@
 
 import UIKit
 import AudioToolbox
+import AVFoundation
 import CoreMotion
 
 class GameController: UIViewController {
     
+    var tableAudioPlayer = AVAudioPlayer()
+    var raquetAudioPlayer = AVAudioPlayer()
     var timer1 = NSTimer()
     var timer2 = NSTimer()
     var queue = NSOperationQueue()
@@ -21,10 +24,10 @@ class GameController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        timer1 = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("ballDidHitTable"), userInfo: nil, repeats: false)
         canHit = true
+        setupSound()
         monitorUserMovements()
-       // playerDidHit()
+
     }
     
     
@@ -54,6 +57,7 @@ class GameController: UIViewController {
     
     func ballDidHitTable() {
         println("balldidhittable")
+        tableAudioPlayer.play()
         if playerTurn {
             timer1 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("vibrate"), userInfo: nil, repeats: false)
         } else {
@@ -78,6 +82,7 @@ class GameController: UIViewController {
     
     func playerDidHit() {
         println("playerdidhit")
+        raquetAudioPlayer.play()
         //setup timer for ball hitting table
         timer1 = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("ballDidHitTable"), userInfo: nil, repeats: false)
         playerTurn = false
@@ -88,7 +93,8 @@ class GameController: UIViewController {
     }
     
     func enemyPlayerResponded() {
-                println("enemyresponded")
+        println("enemyresponded")
+        raquetAudioPlayer.play()
         timer1 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("ballDidHitTable"), userInfo: nil, repeats: false)
         playerTurn = true
         monitorUserMovements()
@@ -96,4 +102,17 @@ class GameController: UIViewController {
         //if miss blablabla
     }
     
+    func setupSound() {
+        var raquetSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("raquetsound", ofType: "wav")!)
+        var tableSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("tablesound", ofType: "wav")!)
+        
+        // Removed deprecated use of AVAudioSessionDelegate protocol
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        
+        var error:NSError?
+        tableAudioPlayer = AVAudioPlayer(contentsOfURL: tableSound, error: &error)
+        raquetAudioPlayer = AVAudioPlayer(contentsOfURL: raquetSound, error: &error)
+
+    }
 }
