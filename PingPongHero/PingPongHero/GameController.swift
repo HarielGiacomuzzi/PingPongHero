@@ -16,11 +16,9 @@ class GameController: UIViewController {
     var tableAudioPlayer = AVAudioPlayer()
     var raquetAudioPlayer = AVAudioPlayer()
     var timer1 = NSTimer()
-    var timer2 = NSTimer()
     var queue = NSOperationQueue()
     lazy var motionManager = CMMotionManager()
     var canHit = false
-    var playerTurn = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,17 +53,6 @@ class GameController: UIViewController {
         })
     }
     
-    func ballDidHitTable() {
-        println("balldidhittable")
-        tableAudioPlayer.play()
-        if playerTurn {
-            timer1 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("vibrate"), userInfo: nil, repeats: false)
-        } else {
-            timer1 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("enemyPlayerResponded"), userInfo: nil, repeats: false)
-        }
-        //play sound
-        //setup timer
-    }
     
     func vibrate() {
         println("vibrate")
@@ -85,22 +72,35 @@ class GameController: UIViewController {
         raquetAudioPlayer.play()
         //setup timer for ball hitting table
         timer1 = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("ballDidHitTable"), userInfo: nil, repeats: false)
-        playerTurn = false
-    }
-    
-    func playerDidMiss() {
+        
+        //TO DO
+        sendMessage()
         
     }
     
-    func enemyPlayerResponded() {
-        println("enemyresponded")
-        raquetAudioPlayer.play()
-        timer1 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("ballDidHitTable"), userInfo: nil, repeats: false)
-        playerTurn = true
-        monitorUserMovements()
-        //if hit blablabla
-        //if miss blablabla
+    func ballDidHitTable() {
+        println("balldidhittable")
+        tableAudioPlayer.play()
+        
+        /*esse timer n vai mais existir*/
+        timer1 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("enemyPlayerResponded"), userInfo: nil, repeats: false)
+        /*esse timer n vai mais existir*/
+        
     }
+    
+    // MARK: - Functions Using ConnectionManager
+    
+    //acionado quando receber a msg do inimigo
+    func enemyPlayerResponded() {
+        timer1 = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("vibrate"), userInfo: nil, repeats: false)
+        monitorUserMovements()
+    }
+    
+    func sendMessage() {
+        
+    }
+    
+    // MARK: - Auxiliar Functions
     
     func setupSound() {
         var raquetSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("raquetsound", ofType: "wav")!)
@@ -113,6 +113,6 @@ class GameController: UIViewController {
         var error:NSError?
         tableAudioPlayer = AVAudioPlayer(contentsOfURL: tableSound, error: &error)
         raquetAudioPlayer = AVAudioPlayer(contentsOfURL: raquetSound, error: &error)
-
+        
     }
 }
